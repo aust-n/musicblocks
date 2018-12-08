@@ -173,6 +173,7 @@
       })(jQuery);
 
       $(document).ready(function() {
+        $('.modal').modal();
         $("solfa").fixMe();
         $(".up").click(function() {
             $('html, body').animate({
@@ -460,32 +461,39 @@
       <div id="myBar"></div>
     </div>
 
-    <div id="lilypondModal" class="modal">
 
-      <!-- Modal content for Lilypond save dialog -->
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <p>
-          <div id="fileNameText"></div><input type="text" id="fileName"></input>
-        </p>
-        <p>
-          <div id="titleText"></div><input type="text" id="title"></input>
-        </p>
-        <p>
-          <div id="authorText"></div><input type="text" id="author"></input>
-        </p>
-        <p>
-          <div id="MIDIText"></div><input type="checkbox" id="MIDICheck"></input>
-        </p>
-        <p>
-          <div id="guitarText"></div><input type="checkbox" id="guitarCheck"></input>
-        </p>
-        <p><button id="submitLilypond"></button> </p>
-          <!-- <button id="submitPDF"></button></p> -->
-      </div>
+    <div class="materialize-iso">
 
-    </div>
+        <div id="lilypondModal" class="modal">
 
+            <!-- Modal content for Lilypond save dialog -->
+            <div class="modal-content">
+
+              <span class="close">&times;</span>
+              
+                <div id="fileNameText"></div><input type="text" id="fileName" />
+                <div id="titleText"></div><input type="text" id="title"/>
+                <div id="authorText"></div><input type="text" id="author" />
+
+                
+
+                    <!-- <div id="MIDIText"></div>
+                    <input type="checkbox" id="MIDICheck"/>
+                    
+                    <div id="guitarText"></div>
+                    <input type="checkbox" id="guitarCheck"/>
+                    <label for="guitarCheck"></label>  -->
+            </div>
+            </div>
+        
+            
+            <div class="modal-footer">
+                <a id="submitLilypond" href="#!" class="modal-close waves-effect waves-green btn-flat"></a>
+                <a id="submitPDF" href="#!" class="modal-close waves-effect waves-blue btn-flat"></a>
+              </div>
+      
+          </div>
+  
     <div class="materialize-iso">
       <nav id="toolbars" class="nav-wrapper" role="navigation">
         <div class="blue nav-wrapper">
@@ -540,7 +548,7 @@
         <li><a id="save-png"></a></li>
         <li><a id="save-wav"></a></li>
         <li><a id="save-abc"> </a></li>
-        <li><a id="save-ly"></a></li>
+        <li><a class="modal-trigger" href="#lilypondModal" id="save-ly"></a></li>
         <li><a id="save-blockartwork-svg"></a></li>
       </ul>
 
@@ -563,6 +571,7 @@
       <ul id="newdropdown" class="dropdown-content">
         <li><a id="new-project"></a></li>
       </ul>
+      
     </div>
 
   </div> <!-- hideContents -->
